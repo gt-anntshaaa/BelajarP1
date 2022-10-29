@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="mail"
+            type="Model.Mail" />
+        <variable
+            name="handler"
+            type="ViewModel.MyHandler" />
+    </data>
+    <LinearLayout
+        android:padding="@dimen/padding_layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="HALO"
+            android:textColor="@color/black"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/username_input"
+            android:layout_margin="5dp"
+            app:hintEnabled="@{handler.isEnabled}"
+            app:helperText="@{handler.error}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:text="@={mail.mailFrom}"
+                android:layout_width="match_parent"
+                android:inputType="textEmailAddress"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/text_size"
+                android:hint="@string/subject_form_input_hint"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            app:hintEnabled="@{handler.isEnabled}"
+            app:helperText="@{handler.error}"
+            android:layout_margin="5dp"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:text="@={mail.mailTo}"
+                android:hint="@string/subject_to_input_hint"
+                android:inputType="textEmailAddress"
+                android:textSize="@dimen/text_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:text="@={mail.mailSubject}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/subject_input_hint"
+                android:textSize="@dimen/text_size"
+                android:inputType="textEmailSubject"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <EditText
+            android:layout_weight="1"
+            android:text="@={mail.mailContains}"
+            android:hint="@string/subject_contains_input"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:inputType="textLongMessage"/>
+        <Button
+            android:onClick="@{handler::onSend}"
+            toast="@{handler.toastMessage}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="send"
+            android:layout_margin="10dp"
+            android:layout_gravity="end"/>
+    </LinearLayout>
+
+
+</layout>

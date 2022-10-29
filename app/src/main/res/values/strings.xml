@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MyApp</string>
+
+    <string name="subject_form_input_hint">From</string>
+    <string name="subject_to_input_hint">To</string>
+    <string name="subject_input_hint">Subject</string>
+
+    <string name="button_login">login</string>
+    <string name="subject_contains_input">Contains</string>
+    <string name="sekolah_beta">Sekolah Beta</string>
+    <string name="belajar_android">belajar android</string>
+</resources>

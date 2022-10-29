@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/cloud"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher_round"
+            tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/sekolah"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@string/sekolah_beta"
+            android:fontFamily="sans-serif-black"
+            app:layout_constraintStart_toEndOf="@id/cloud"
+            tools:ignore="MissingConstraints" />
+        <TextView
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/belajar_android"
+            app:layout_constraintStart_toEndOf="@id/cloud"
+            app:layout_constraintTop_toBottomOf="@id/sekolah"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
